@@ -1,0 +1,101 @@
+body {
+  background:#2574A9;
+}
+
+#container {
+  width: 50%;
+  padding-top:50px;
+  margin:0 auto;
+}
+
+a {
+  color: #2574A9;
+  text-decoration: none;
+}
+
+.box-panel {
+  background:#f5f5f5;
+  width: 100%;
+  border-radius:8px;
+  border: 2px solid #ccc;
+  border-bottom: 6px solid #aaa;
+  padding: 20px 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.profile-pane {
+  width: 100%;
+  text-align:center;
+}
+
+.profile-picture {
+  width: 30%;
+  border-radius:50%;
+  margin: 0 auto;
+  border: 6px solid #f5f5f5;
+}
+
+.title-pane h1 {
+  font-family: 'Copse', serif;
+  text-align: center;
+}
+
+.title-pane h1 > span {
+  color: #2574A9;
+}
+
+.title-pane p {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 0 50px;
+}
+
+.title-pane p > span {
+  font-weight: 400;
+  color: #2574A9;
+}
+
+.details-pane {
+  border-top:1px solid rgba(0,0,0, .1);
+}
+.details-pane p {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  font-size: 0.9em;
+  padding: 0 30px;
+}
+
+.details-pane p > span {
+  font-weight: 400;
+  color: #2574A9;
+}
+
+@media (max-width: 1024px) {
+  #container {
+    width: 60%;
+  }
+
+  .profile-picture {
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+  #container {
+    width: 70%;
+  }
+
+  .profile-picture {
+    width: 50%;
+}
+
+@media (max-width: 480px) {
+  #container {
+    width: 90%;
+  }
+
+  .profile-picture {
+    width: 60%;
+}
