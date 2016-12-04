@@ -1,5 +1,9 @@
 body {
-  background:#2574A9;
+
+background: #2980b9; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #container {
@@ -9,16 +13,24 @@ body {
 }
 
 a {
-  color: #2574A9;
+  color: #3a7bd5;
   text-decoration: none;
 }
 
+.transparent-box-panel {
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  padding: 20px;
+  border-radius:8px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .box-panel {
-  background:#f5f5f5;
+  background: #fff;
   width: 100%;
   border-radius:8px;
-  border: 2px solid #ccc;
-  border-bottom: 6px solid #aaa;
   padding: 20px 20px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -31,19 +43,20 @@ a {
 }
 
 .profile-picture {
-  width: 30%;
+  width: 25%;
   border-radius:50%;
   margin: 0 auto;
   border: 6px solid #f5f5f5;
 }
 
 .title-pane h1 {
-  font-family: 'Copse', serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
+  font-weight: 100;
 }
 
 .title-pane h1 > span {
-  color: #2574A9;
+  color: #3a7bd5;
 }
 
 .title-pane p {
@@ -55,7 +68,7 @@ a {
 
 .title-pane p > span {
   font-weight: 400;
-  color: #2574A9;
+  color: #3a7bd5;
 }
 
 .details-pane {
@@ -70,7 +83,40 @@ a {
 
 .details-pane p > span {
   font-weight: 400;
-  color: #2574A9;
+  color: #3a7bd5;
+}
+
+a {
+  outline: none;
+}
+
+a:active {
+  outline: none;
+}
+
+.btn {
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1.2em;
+  background: transparent;
+  border: 2px solid #2980b9;
+  color: #2980b9;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #2980b9; /* fallback for old browsers */
+  color: #fff;
+  border: 2px solid #2980b9;
+  transition: 0.2s;
+}
+
+.fa-15x {
+  font-size: 1.2em !important;
 }
 
 @media (max-width: 1024px) {
