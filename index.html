@@ -9,7 +9,7 @@
     <div id="container">
       <div class="transparent-box-panel">
         <div class="box-panel">
-          <div id="main-panel">
+          <div id="main-panel" class="transitioning-panel">
             <div class="profile-pane">
               <img class="profile-picture" src="assets/images/prof_adhy.JPG" />
             </div>
@@ -22,8 +22,9 @@
                 and an <span>Aspiring Product Manager</span>.</p>
             </div>
           </div>
-          <div id="details-panel">
+          <div id="about-panel" class="transitioning-panel">
             <div class="details-pane">
+              <h2 class="default-heading">A byte About Me</h2>
               <p>
                 My passion is to <span>empower people's career and growth using technology</span>.
                 I have a deep interest on how people find and learn new things, and
@@ -41,22 +42,106 @@
                 design, product, and customer development. I love thinking, planning, creating,
                 validating, and testing new technology products. I'm also an anime-junkie and bad punster.
               </p>
+              <p>
+                <a href=""><i class="fa fa-15x fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-15x fa-github"></i></a>
+                <a href=""><i class="fa fa-15x fa-facebook"></i></a>
+                <a href=""><i class="fa fa-15x fa-twitter"></i></a>
+              </p>
+
             </div>
           </div>
-          <div class="details-pane">
-            <p>
-              <button class="btn">Check My CV</button>
-              <a href=""><button class="btn"><i class="fa fa-15x fa-linkedin"></i></button></a>
-              <a href=""><button class="btn"><i class="fa fa-15x fa-github"></i></button></a>
-              <a href=""><button class="btn"><i class="fa fa-15x fa-facebook"></i></button></a>
-              <a href=""><button class="btn"><i class="fa fa-15x fa-twitter"></i></button></a>
-            </p>
-            <p>
+          <div id="careers-panel" class="transitioning-panel">
+            <div class="details-pane">
+              <h2 class="default-heading">My Careers</h2>
+            </div>
+          </div>
+          <div id="portfolios-panel" class="transitioning-panel">
+            <div class="details-pane">
+              <h2 class="default-heading">My Portfolios</h2>
+            </div>
+          </div>
+          <div class="details-pane navigation-pane">
+            <div class="full-width">
+              <button id="btn-to-home" class="btn btn-active">home</button>
+              <button id="btn-to-about" class="btn">about</button>
+              <button id="btn-to-careers" class="btn">careers</button>
+              <button id="btn-to-portfolios" class="btn">portfolios</button>
+            </div>
+            <div class="full-width">
               Have a chat? Please drop me an email to <a href="mailto:adhywiranatap@gmail.com">adhywiranatap@gmail.com</a>
-            </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      var mainPanel       = document.getElementById('main-panel');
+      var aboutPanel      = document.getElementById('about-panel');
+      var careersPanel    = document.getElementById('careers-panel');
+      var portfoliosPanel = document.getElementById('portfolios-panel');
+
+      var btnToHome       = document.getElementById('btn-to-home');
+      var btnToAbout      = document.getElementById('btn-to-about');
+      var btnToCareers    = document.getElementById('btn-to-careers');
+      var btnToPortfolios = document.getElementById('btn-to-portfolios');
+
+      btnToHome.addEventListener('click', () => {
+        mainPanel.style.display       = 'block';
+        aboutPanel.style.display      = 'none';
+        careersPanel.style.display    = 'none';
+        portfoliosPanel.style.display = 'none';
+
+        btnToHome.classList       .add    ('btn-active');
+        btnToAbout.classList      .remove ('btn-active');
+        btnToCareers.classList    .remove ('btn-active');
+        btnToPortfolios.classList .remove ('btn-active');
+
+        document.body.style.background = 'linear-gradient(to left, #2980b9 , #2c3e50)';
+      });
+
+      btnToAbout.addEventListener('click', () => {
+        mainPanel.style.display       = 'none';
+        aboutPanel.style.display      = 'block';
+        careersPanel.style.display    = 'none';
+        portfoliosPanel.style.display = 'none';
+
+        btnToHome.classList       .remove ('btn-active');
+        btnToAbout.classList      .add    ('btn-active');
+        btnToCareers.classList    .remove ('btn-active');
+        btnToPortfolios.classList .remove ('btn-active');
+
+        document.body.style.background = 'linear-gradient(to left, #24C6DC , #514A9D)';
+      });
+
+      btnToCareers.addEventListener('click', () => {
+        mainPanel.style.display       = 'none';
+        aboutPanel.style.display      = 'none';
+        careersPanel.style.display    = 'block';
+        portfoliosPanel.style.display = 'none';
+
+        btnToHome.classList       .remove ('btn-active');
+        btnToAbout.classList      .remove ('btn-active');
+        btnToCareers.classList    .add    ('btn-active');
+        btnToPortfolios.classList .remove ('btn-active');
+
+        document.body.style.background = 'linear-gradient(to left, #2C3E50 , #4CA1AF)';
+      });
+
+      btnToPortfolios.addEventListener('click', () => {
+        mainPanel.style.display       = 'none';
+        aboutPanel.style.display      = 'none';
+        careersPanel.style.display    = 'none';
+        portfoliosPanel.style.display = 'block';
+
+        btnToHome.classList       .remove ('btn-active');
+        btnToAbout.classList      .remove ('btn-active');
+        btnToCareers.classList    .remove ('btn-active');
+        btnToPortfolios.classList .add    ('btn-active');
+
+        document.body.style.background = 'linear-gradient(to left, #1A2980 , #26D0CE)';
+      });
+
+    </script>
   </body>
 </html>

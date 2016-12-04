@@ -1,9 +1,10 @@
 body {
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-background: #2980b9; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  font-family: 'Open Sans', sans-serif;
+  transition: background .5s; /* .5s how long transitions shoould take */
 }
 
 #container {
@@ -35,6 +36,8 @@ a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  height: auto;
+  overflow-y: auto;
 }
 
 .profile-pane {
@@ -46,7 +49,7 @@ a {
   width: 25%;
   border-radius:50%;
   margin: 0 auto;
-  border: 6px solid #f5f5f5;
+  border: 10px solid #F6F6F6;
 }
 
 .title-pane h1 {
@@ -71,13 +74,14 @@ a {
   color: #3a7bd5;
 }
 
-.details-pane {
-  border-top:1px solid rgba(0,0,0, .1);
+.navigation-pane {
+  border-top:1px solid rgba(0,0,0, .05);
+  padding-top: 20px;
 }
 .details-pane p {
   font-family: 'Open Sans', sans-serif;
   text-align: justify;
-  font-size: 0.9em;
+  font-size: 1.1em;
   padding: 0 30px;
 }
 
@@ -106,6 +110,15 @@ a:active {
   border: 2px solid #2980b9;
   color: #2980b9;
   transition: 0.2s;
+  outline: none;
+  float: left;
+  margin: 5px;
+}
+
+.btn-active {
+  background: #2980b9;
+  color: #fff;
+  border: 2px solid #2980b9;
 }
 
 .btn:hover {
@@ -118,6 +131,33 @@ a:active {
 .fa-15x {
   font-size: 1.2em !important;
 }
+
+.transitioning-panel {
+  transition: display .5s;
+  min-height: 50%;
+}
+
+.full-width {
+  width: 100% !important;
+  height: auto;
+  float: left;
+}
+
+#main-panel {
+  display: block;
+}
+
+#about-panel, #careers-panel, #portfolios-panel {
+  display: none;
+}
+
+.default-heading {
+  color: #2980b9;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 2.3em;
+}
+
 
 @media (max-width: 1024px) {
   #container {
