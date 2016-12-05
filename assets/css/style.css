@@ -18,6 +18,16 @@ a {
   text-decoration: none;
 }
 
+.social-link {
+  margin: 10px;
+  font-size: 1.5em;
+  transition: 0.1s;
+}
+
+.social-link:hover {
+  transition: 0.1s;
+}
+
 .transparent-box-panel {
   background: rgba(255, 255, 255, 0.2);
   width: 100%;
