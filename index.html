@@ -73,14 +73,14 @@
       </div>
     </div>
     <script>
-      var mainPanel       = document.getElementById('main-panel');
-      var aboutPanel      = document.getElementById('about-panel');
-      var careersPanel    = document.getElementById('careers-panel');
+      var mainPanel = document.getElementById('main-panel');
+      var aboutPanel = document.getElementById('about-panel');
+      var careersPanel = document.getElementById('careers-panel');
       var portfoliosPanel = document.getElementById('portfolios-panel');
 
-      var btnToHome       = document.getElementById('btn-to-home');
-      var btnToAbout      = document.getElementById('btn-to-about');
-      var btnToCareers    = document.getElementById('btn-to-careers');
+      var btnToHome = document.getElementById('btn-to-home');
+      var btnToAbout = document.getElementById('btn-to-about');
+      var btnToCareers = document.getElementById('btn-to-careers');
       var btnToPortfolios = document.getElementById('btn-to-portfolios');
 
       btnToHome.addEventListener('click', () => {
@@ -89,10 +89,10 @@
         careersPanel.style.display    = 'none';
         portfoliosPanel.style.display = 'none';
 
-        btnToHome.classList       .add    ('btn-active');
-        btnToAbout.classList      .remove ('btn-active');
-        btnToCareers.classList    .remove ('btn-active');
-        btnToPortfolios.classList .remove ('btn-active');
+        btnToHome.classList.add('btn-active');
+        btnToAbout.classList.remove('btn-active');
+        btnToCareers.classList.remove('btn-active');
+        btnToPortfolios.classList.remove('btn-active');
 
         document.body.style.background = 'linear-gradient(to left, #2980b9 , #2c3e50)';
       });
