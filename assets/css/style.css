@@ -1,197 +1,187 @@
 body {
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  font-family: 'Open Sans', sans-serif;
-  transition: background .5s; /* .5s how long transitions shoould take */
+#main {
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+#main h1 {
+  font-size: 3em;
+}
+
+.lead {
+  font-size: 1.7em;
+}
+
+.main-01 {
+  color: #674172;
+}
+
+.main-02 {
+  color: #EC644B;
+}
+
+.main-03 {
+  color: #1BBC9B;
+}
+
+.main-04 {
+  color: #EB9532;
+}
+
+.main-05 {
+  color: #3498DB;
+}
+
+#main h2 {
+  font-size: 2em;
+  padding: 30;
 }
 
 #container {
-  width: 50%;
-  padding-top:50px;
-  margin:0 auto;
+  background-color: rgba(255, 255, 255);
+  width: 70%;
 }
 
-a {
-  color: #3a7bd5;
-  text-decoration: none;
-}
-
-.social-link {
-  margin: 10px;
-  font-size: 1.5em;
-  transition: 0.1s;
-}
-
-.social-link:hover {
-  transition: 0.1s;
-}
-
-.transparent-box-panel {
-  background: rgba(255, 255, 255, 0.2);
-  width: 100%;
-  padding: 20px;
-  border-radius:8px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.box-panel {
-  background: #fff;
-  width: 100%;
-  border-radius:8px;
-  padding: 20px 20px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  height: auto;
-  overflow-y: auto;
-}
-
-.profile-pane {
-  width: 100%;
-  text-align:center;
-}
-
-.profile-picture {
-  width: 25%;
-  border-radius:50%;
-  margin: 0 auto;
-  border: 10px solid #F6F6F6;
-}
-
-.title-pane h1 {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  font-weight: 100;
-}
-
-.title-pane h1 > span {
-  color: #3a7bd5;
-}
-
-.title-pane p {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  font-size: 1.3em;
-  padding: 0 50px;
-}
-
-.title-pane p > span {
-  font-weight: 400;
-  color: #3a7bd5;
-}
-
-.navigation-pane {
-  border-top:1px solid rgba(0,0,0, .05);
-  padding-top: 20px;
-}
-.details-pane p {
-  font-family: 'Open Sans', sans-serif;
-  text-align: justify;
-  font-size: 1.1em;
-  padding: 0 30px;
-}
-
-.details-pane p > span {
-  font-weight: 400;
-  color: #3a7bd5;
-}
-
-a {
-  outline: none;
-}
-
-a:active {
-  outline: none;
-}
-
-.btn {
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  padding: 15px 20px;
-  border: 0;
-  border-radius: 5px;
-  font-size: 1.2em;
-  background: transparent;
-  border: 2px solid #2980b9;
-  color: #2980b9;
-  transition: 0.2s;
-  outline: none;
-  float: left;
-  margin: 5px;
-}
-
-.btn-active {
-  background: #2980b9;
-  color: #fff;
-  border: 2px solid #2980b9;
-}
-
-.btn:hover {
-  background: #2980b9; /* fallback for old browsers */
-  color: #fff;
-  border: 2px solid #2980b9;
-  transition: 0.2s;
-}
-
-.fa-15x {
-  font-size: 1.2em !important;
-}
-
-.transitioning-panel {
-  transition: display .5s;
-  min-height: 50%;
-}
-
-.full-width {
-  width: 100% !important;
-  height: auto;
-  float: left;
-}
-
-#main-panel {
-  display: block;
-}
-
-#about-panel, #careers-panel, #portfolios-panel {
-  display: none;
-}
-
-.default-heading {
-  color: #2980b9;
-  font-weight: lighter;
-  text-align: center;
-  font-size: 2.3em;
-}
-
-
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   #container {
-    width: 60%;
+    width: 80%;
   }
-
-  .profile-picture {
-    width: 40%;
 }
 
-@media (max-width: 768px) {
-  #container {
-    width: 70%;
-  }
-
-  .profile-picture {
-    width: 50%;
-}
-
-@media (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   #container {
     width: 90%;
   }
+}
 
-  .profile-picture {
-    width: 60%;
+@media only screen and (max-width: 480px) {
+  #container {
+    width: 100%;
+  }
+}
+
+#search-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+.search {
+  width: 80%;
+  font-size: 2em;
+  padding: 30;
+  border: 10px solid rgba(0, 0, 0, .1);
+  border-radius: 20px;
+  outline: none;
+  color: #65C6BB;
+  font-family: 'Dosis', sans-serif;
+}
+
+/*.search:focus {
+  border: 0;
+  margin: 10;
+  color: #FFF;
+  background: #ffb347;
+  background: -webkit-linear-gradient(to right, #ffcc33, #ffb347);
+  background: linear-gradient(to right, #ffcc33, #ffb347);
+}*/
+
+.search-hint {
+  text-align: center;
+  color: #BBB;
+  font-size: 1.2em;
+  padding: 10;
+}
+
+#content {
+  margin-top: 80px;
+}
+
+.card-wrapper {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.headline-description {
+  color: #AAAAAA;
+  line-height: 1.5em;
+}
+
+.headline-name {
+  color: #F4B350;
+}
+
+.fun {
+  color: #D2527F;
+}
+
+.dots {
+  line-height: 1em;
+  display: flex;
+  flex-direction: row;
+  font-size: 6em;
+  text-align: center;
+}
+
+.red-dot {
+  color: #EC644B;
+  width: 100%;
+}
+
+.card {
+  margin: 10;
+  background: #FFFFFF;
+  padding: 0;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-direction: row;
+  font-family: 'Dosis', sans-serif;
+}
+
+.card-normal {
+  flex: 1;
+}
+
+.card-half {
+  flex: 0.5;
+}
+
+.card-image {
+  width: 20%;
+  height: 220;
+  background: url('../images/prof_adhy.JPG');
+  background-size: cover;
+}
+
+.card-content {
+  padding: 10 30;
+}
+
+.card-content > h3 {
+  font-size: 2em;
+  margin-top: 10;
+}
+
+.blue-card {
+  background-color: #52B3D9;
+  color: #FFFFFF;
+}
+
+.orange-card {
+  background-color: #E9D460;
+  color: #353535;
 }
