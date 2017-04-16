@@ -1,9 +1,11 @@
 body {
-  background: #EEEEEE;
+  background: #F5F5F5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 #main {
@@ -17,6 +19,7 @@ body {
 
 .lead {
   font-size: 1.7em;
+  padding: 0 10;
 }
 
 .main-01 {
@@ -47,6 +50,23 @@ body {
 #container {
   background-color: rgba(255, 255, 255);
   width: 70%;
+  padding-bottom: 30px;
+}
+
+#content {
+  margin-top: 80px;
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  /*background: url('../images/card-wrapper.jpg');
+  background-size: cover;*/
+  background: #FAFAFA;
+  position: relative;
+}
+
+.card-container {
+  padding: 100;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -73,17 +93,32 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Dosis', sans-serif;
+  position: relative;
 }
 
 .search {
-  width: 80%;
+  width: 100%;
   font-size: 2em;
-  padding: 30;
+  padding: 20 30;
   border: 10px solid rgba(0, 0, 0, .1);
   border-radius: 20px;
   outline: none;
-  color: #65C6BB;
+  color: #1BBC9B;
   font-family: 'Dosis', sans-serif;
+}
+
+.search-enter {
+  position: absolute;
+  top: 15%;
+  right: 20px;
+  border: 0;
+  background-color: #1BBC9B;
+  color: #FFFFFF;
+  padding: 15;
+  font-size: 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
 }
 
 /*.search:focus {
@@ -102,10 +137,6 @@ body {
   padding: 10;
 }
 
-#content {
-  margin-top: 80px;
-}
-
 .card-wrapper {
   display: -webkit-flex; /* Safari */
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
@@ -120,8 +151,16 @@ body {
   line-height: 1.5em;
 }
 
+.headline-tooltip {
+  cursor: pointer;
+}
+
 .headline-name {
   color: #F4B350;
+}
+
+.headline-city {
+  color: #EC644B;
 }
 
 .fun {
@@ -141,6 +180,41 @@ body {
   width: 100%;
 }
 
+.magic-dot {
+  background: #59ABE3;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 50 auto;
+}
+
+.magic-dot:hover {
+  background: transparent;
+  width: 0;
+	height: 0;
+  border-radius: 0;
+	border-left: 25px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 50px solid #EB9532;
+  border-radius: 50;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-icons a {
+  flex: 1;
+  font-size: 2em;
+  color: #CCC;
+  outline: none;
+}
+
+.social-icons a:hover {
+  color: #888;
+}
+
 .card {
   margin: 10;
   background: #FFFFFF;
@@ -148,8 +222,17 @@ body {
   display: -webkit-flex; /* Safari */
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
   display: flex;
+  border-radius: 5px;
   flex-direction: row;
   font-family: 'Dosis', sans-serif;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
 }
 
 .card-normal {
