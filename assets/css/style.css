@@ -280,10 +280,11 @@ body {
   display: -webkit-flex; /* Safari */
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
   display: flex;
-  border-radius: 5px;
+  border-radius: 10px;
   flex-direction: row;
   font-family: 'Dosis', sans-serif;
   transition: 0.5s;
+  border: 1px solid rgba(0,0, 0,.1);
 }
 
 .card:hover {
