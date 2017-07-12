@@ -62,9 +62,9 @@ body {
 
 @media only screen and (max-width: 480px) {
   .atom-logo {
-  height: 80px;
-  width: 80px;
-}
+    height: 80px;
+    width: 80px;
+  }
 }
 
 @keyframes atom-logo-spin {
@@ -84,7 +84,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .lead {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 20;
     text-align: center;
   }
@@ -147,8 +147,12 @@ body {
   text-align: center;
 }
 
+/* ==== SOCIAL SECTION ==== */
+
 .social-icons {
   display: flex;
+  padding: 0 10px;
+  box-sizing: border-box;
   flex-direction: row;
 }
 
@@ -161,6 +165,12 @@ body {
 
 .social-icons a:hover {
   color: #888;
+}
+
+@media only screen and (max-width: 480px) {
+  .social-icons a {
+    font-size: 1em;
+  }
 }
 
 #search-wrapper {
@@ -228,7 +238,7 @@ body {
     width: 90%;
   }
   .card-container {
-    padding: 40
+    padding: 40px;
   }
   .card-image {
     display: none;
@@ -310,7 +320,7 @@ body {
 }
 
 .card {
-  margin: 10;
+  margin: 10px;
   background: #FFFFFF;
   padding: 0;
   display: -webkit-flex; /* Safari */
@@ -320,14 +330,14 @@ body {
   flex-direction: row;
   font-family: 'Dosis', sans-serif;
   transition: 0.5s;
-  border: 1px solid rgba(0,0, 0,.1);
+  /*border: 1px solid rgba(0,0, 0,.1);*/
 }
 
 .card:hover {
   transition: 0.5s;
-  -webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
+  /*-webkit-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
   -moz-box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
-  box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 2px 31px 0px rgba(0,0,0,0.12);*/
 }
 
 .card-normal {
@@ -375,17 +385,27 @@ body {
 
 .card-content > h3 {
   font-size: 3em;
-  margin-top: 40;
+  margin-top: 40px;
   line-height: 1em;
-  padding-left: 20px;
+  padding-left: 0px;
   color: #3498DB;
 }
 
+.card-content > a {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  line-height: 0em;
+  padding-left: 0px;
+  color: #EC644B;
+  text-decoration: none;
+  text-align: center;
+}
+
 .card-content > p {
-  padding: 10px;
+  padding: 0px;
   font-size: 1.2em;
   color: #777;
-  margin-top: -40;
+  text-align: center;
 }
 
 .blue-card {
@@ -396,6 +416,11 @@ body {
 .orange-card {
   background-color: #E9D460;
   color: #353535;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 200px;
 }
 
 /* ==== CONTENT SECTION ==== */
