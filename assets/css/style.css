@@ -436,3 +436,15 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* === FOOTER === */
+footer {
+  margin-top: 50px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #353535;
+  color: #FFFFFF;
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+}
