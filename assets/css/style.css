@@ -44,7 +44,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   #main h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   #main h2 {
@@ -60,6 +60,13 @@ body {
   width: 150px;
 }
 
+@media only screen and (max-width: 480px) {
+  .atom-logo {
+  height: 80px;
+  width: 80px;
+}
+}
+
 @keyframes atom-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -71,7 +78,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .lead {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
