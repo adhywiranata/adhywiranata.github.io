@@ -1,3 +1,3 @@
 # adhywiranata.github.io
 
-this is just a really simple personal blog :)
+this is just a really simple personal blog.. with Elm! :)
