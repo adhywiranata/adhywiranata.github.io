@@ -1,6 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img, span, p, a, i)
+import Html exposing (Html, text, div, h1, h3, img, span, p, a, i)
 import Html.Attributes exposing (src, id, class, target, href)
 
 
@@ -131,6 +131,39 @@ viewSocial =
         ]
 
 
+viewDescription : Html Msg
+viewDescription =
+    div
+        [ class "card-container" ]
+        [ div
+            [ class "card-wrapper" ]
+            [ div
+                [ class "card card-normal" ]
+                [ div
+                    [ class "card-content" ]
+                    [ h3
+                        []
+                        [ text "WHO AM I" ]
+                    , p
+                        []
+                        [ text "I am a front-end engineer passionate in internet-based"
+                        , text "technology. I am an INFP (Mediator) person, a futurist"
+                        , text "and a learner by nature, a good listener and sometimes"
+                        , text "a deep thinker. I have a great drive to improve people's"
+                        , text "life by helping them launch their dream, passion, and "
+                        , text "career through education and productivity."
+                        ]
+                    ]
+                ]
+            ]
+        ]
+
+
+viewShowcase : Html Msg
+viewShowcase =
+    div [] []
+
+
 view : Model -> Html Msg
 view model =
     div
@@ -143,6 +176,13 @@ view model =
             , viewLeadContent
             , viewSocial
             ]
+        , div
+            [ id "content" ]
+            [ viewDescription
+            ]
+        , div
+            [ id "showcase" ]
+            [ viewShowcase ]
         ]
 
 
