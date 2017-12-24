@@ -1,6 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img, span)
+import Html exposing (Html, text, div, h1, img, span, p)
 import Html.Attributes exposing (src, id, class)
 
 
@@ -49,6 +49,15 @@ viewLogo =
         , class "atom-logo"
         ] []
 
+viewLeadContent : Html Msg
+viewLeadContent =
+    p
+        [ class "lead" ]
+        [ span
+                [ class "headline-description" ]
+                [ text "Hi, I'm" ]
+        ]
+
 
 view : Model -> Html Msg
 view model =
@@ -58,6 +67,7 @@ view model =
             [ id "main" ]
             [ viewHeading
             , viewLogo
+            , viewLeadContent
             ]
         ]
 
