@@ -7,13 +7,32 @@ import Html.Attributes exposing (src, id, class, target, href)
 ---- MODEL ----
 
 
+type alias ShowcaseItem =
+    { id : Int
+    , title : String
+    , link : String
+    }
+
+
 type alias Model =
-    {}
+    { showcaseList : List ShowcaseItem }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( { showcaseList =
+            [ { id = 1
+              , title = "Hello"
+              , link = "lorem ipsum dolor.."
+              }
+            , { id = 2
+              , title = "Hellow"
+              , link = "lorem ipsum doler.."
+              }
+            ]
+      }
+    , Cmd.none
+    )
 
 
 
