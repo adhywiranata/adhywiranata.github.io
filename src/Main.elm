@@ -1,6 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, h3, img, span, p, a, i)
+import Html exposing (Html, text, div, h1, h3, img, span, p, a, i, footer)
 import Html.Attributes exposing (src, id, class, target, href)
 
 
@@ -198,7 +198,9 @@ viewShowcaseItem showcaseItem =
             [ class "card card-normal" ]
             [ div
                 [ class "card-content" ]
-                [ a [ href showcaseItem.link ]
+                [ a [ href showcaseItem.link
+                    , target "_blank"
+                    ]
                     [ h3 [] [ text showcaseItem.title ]
                     ]
                 , p
@@ -238,6 +240,16 @@ view model =
         , div
             [ id "showcase" ]
             [ viewShowcaseList model.showcaseList ]
+        , footer
+            []
+            [ span
+                []
+                [ text "copyright by "
+                , a
+                    [ href "https://adhywiranata.com" ]
+                    [ text "Adhy Wiranata" ]
+                ]
+            ]
         ]
 
 
