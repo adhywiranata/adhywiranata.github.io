@@ -11,6 +11,7 @@ type alias ShowcaseItem =
     { id : Int
     , title : String
     , link : String
+    , description: String
     }
 
 
@@ -22,12 +23,24 @@ init : ( Model, Cmd Msg )
 init =
     ( { showcaseList =
             [ { id = 1
-              , title = "Hello"
-              , link = "lorem ipsum dolor.."
+              , title = "Ree.na Framework"
+              , link = "https://github.com/adhywiranata/reena"
+              , description = "React Native Opinionated Framework with Atomic Design"
               }
             , { id = 2
-              , title = "Hellow"
-              , link = "lorem ipsum doler.."
+              , title = "React Code Splitting"
+              , link = "https://github.com/adhywiranata/react-code-split-component"
+              , description = "Painless Code Splitting Higher Order Component for React"
+              }
+            , { id = 3
+              , title = "Museic"
+              , link = "https://museic.adhywiranata.com"
+              , description = "Data visualization of top artists, musics, and albums from Spotify using React, Redux, and D3"
+              }
+            , { id = 4
+              , title = "Exploranime"
+              , link = "https://exploranime.adhywiranata.com"
+              , description = "Anime Listing Progressive Web App using kitsu.io API"
               }
             ]
       }
@@ -177,27 +190,33 @@ viewDescription =
             ]
         ]
 
-
-viewShowcase : Html Msg
-viewShowcase =
+viewShowcaseItem : ShowcaseItem -> Html Msg
+viewShowcaseItem showcaseItem =
     div
-        [ class "card-container" ]
+        [ class "card-wrapper" ]
         [ div
-            [ class "card-wrapper" ]
+            [ class "card card-normal" ]
             [ div
-                [ class "card card-normal" ]
-                [ div
-                    [ class "card-content" ]
-                    [ a [ href "https://github.com/adhywiranata/react-code-split-component" ]
-                        [ h3 [] [ text "React Code Splitting" ]
-                        ]
-                    , p
-                        []
-                        [ text "Painless Code Splitting Higher Order Component for React" ]
+                [ class "card-content" ]
+                [ a [ href showcaseItem.link ]
+                    [ h3 [] [ text showcaseItem.title ]
                     ]
+                , p
+                    []
+                    [ text showcaseItem.description ]
                 ]
             ]
         ]
+
+viewShowcaseList : List ShowcaseItem -> Html Msg
+viewShowcaseList showcaseList =
+    let
+        showcaseItems =
+            List.map viewShowcaseItem showcaseList
+    in
+        div
+            [ class "card-container" ]
+            showcaseItems
 
 
 view : Model -> Html Msg
@@ -218,7 +237,7 @@ view model =
             ]
         , div
             [ id "showcase" ]
-            [ viewShowcase ]
+            [ viewShowcaseList model.showcaseList ]
         ]
 
 
