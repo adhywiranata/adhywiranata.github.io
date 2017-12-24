@@ -1,7 +1,7 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img)
-import Html.Attributes exposing (src)
+import Html exposing (Html, text, div, h1, img, span)
+import Html.Attributes exposing (src, id, class)
 
 
 ---- MODEL ----
@@ -31,13 +31,34 @@ update msg model =
 
 
 ---- VIEW ----
+viewHeading : Html Msg
+viewHeading =
+    h1
+        []
+        [ span [ class "main-01" ] [ text "__" ]
+        , span [ class "main-02" ] [ text "." ]
+        , span [ class "main-03" ] [ text "the" ]
+        , span [ class "main-04" ] [ text "Artsy" ]
+        , span [ class "main-05" ] [ text "Tinkerer" ]
+        ]
+
+viewLogo : Html Msg
+viewLogo =
+    img
+        [ src "./images/atom_v2.svg"
+        , class "atom-logo"
+        ] []
 
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ img [ src "/logo.svg" ] []
-        , h1 [] [ text "Your Elm App is working!" ]
+    div
+        [ id "container" ]
+        [ div
+            [ id "main" ]
+            [ viewHeading
+            , viewLogo
+            ]
         ]
 
 
