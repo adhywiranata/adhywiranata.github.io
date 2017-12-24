@@ -1,7 +1,7 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, img, span, p)
-import Html.Attributes exposing (src, id, class)
+import Html exposing (Html, text, div, h1, img, span, p, a, i)
+import Html.Attributes exposing (src, id, class, target, href)
 
 
 ---- MODEL ----
@@ -31,43 +31,117 @@ update msg model =
 
 
 ---- VIEW ----
+
+
 viewHeading : Html Msg
 viewHeading =
     h1
         []
         [ span [ class "main-01" ] [ text "__" ]
-        , span [ class "main-02" ] [ text "." ]
+        , span [ class "main-02" ] [ text " . " ]
         , span [ class "main-03" ] [ text "the" ]
         , span [ class "main-04" ] [ text "Artsy" ]
         , span [ class "main-05" ] [ text "Tinkerer" ]
         ]
+
 
 viewLogo : Html Msg
 viewLogo =
     img
         [ src "./images/atom_v2.svg"
         , class "atom-logo"
-        ] []
+        ]
+        []
+
 
 viewLeadContent : Html Msg
 viewLeadContent =
     p
         [ class "lead" ]
         [ span
-                [ class "headline-description" ]
-                [ text "Hi, I'm" ]
+            [ class "headline-description" ]
+            [ span
+                []
+                [ text "Hi, I'm " ]
+            , span
+                [ class "headline-name headline-tooltip" ]
+                [ text "Adhy Wiranata" ]
+            , span
+                []
+                [ text ", " ]
+            , span
+                [ class "headline-title headline-tooltip" ]
+                [ text "Full Stack Engineer" ]
+            , span
+                []
+                [ text " based in " ]
+            , span
+                [ class "headline-city headline-tooltip" ]
+                [ text "Jakarta, Indonesia" ]
+            , span
+                []
+                [ text ". I made " ]
+            , span
+                [ class "headline-tech headline-tooltip" ]
+                [ text "Web Apps" ]
+            , span
+                []
+                [ text " and " ]
+            , span
+                [ class "headline-tech headline-tooltip" ]
+                [ text "React Native Mobile Apps" ]
+            ]
+        ]
+
+
+viewSocial : Html Msg
+viewSocial =
+    div
+        [ class "social-icons" ]
+        [ a
+            [ target "_top"
+            , href "mailto:adhywiranatap@gmail.com"
+            ]
+            [ i [ class "fa fa-envelope" ] [] ]
+        , a
+            [ target "_blank"
+            , href "https://www.facebook.com/frost.adh"
+            ]
+            [ i [ class "fa fa-facebook" ] [] ]
+        , a
+            [ target "_blank"
+            , href "https://twitter.com/adhfrostfate"
+            ]
+            [ i [ class "fa fa-twitter" ] [] ]
+        , a
+            [ target "_blank"
+            , href "https://www.linkedin.com/in/adhywiranata"
+            ]
+            [ i [ class "fa fa-linkedin" ] [] ]
+        , a
+            [ target "_blank"
+            , href "https://github.com/adhywiranata"
+            ]
+            [ i [ class "fa fa-github" ] [] ]
+        , a
+            [ target "_blank"
+            , href "https://medium.com/@adhywiranata"
+            ]
+            [ i [ class "fa fa-medium" ] [] ]
         ]
 
 
 view : Model -> Html Msg
 view model =
     div
-        [ id "container" ]
+        [ id "container"
+        ]
         [ div
             [ id "main" ]
             [ viewHeading
             , viewLogo
             , viewLeadContent
+            , viewSocial
             ]
         ]
 
