@@ -161,7 +161,24 @@ viewDescription =
 
 viewShowcase : Html Msg
 viewShowcase =
-    div [] []
+    div
+        [ class "card-container" ]
+        [ div
+            [ class "card-wrapper" ]
+            [ div
+                [ class "card card-normal" ]
+                [ div
+                    [ class "card-content" ]
+                    [ a [ href "https://github.com/adhywiranata/react-code-split-component" ]
+                        [ h3 [] [ text "React Code Splitting" ]
+                        ]
+                    , p
+                        []
+                        [ text "Painless Code Splitting Higher Order Component for React" ]
+                    ]
+                ]
+            ]
+        ]
 
 
 view : Model -> Html Msg
