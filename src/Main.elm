@@ -6,6 +6,11 @@ import Html.Attributes exposing (src, id, class, target, href)
 
 ---- MODEL ----
 
+type alias SocialLinkItem =
+    { id : Int
+    , icon: String
+    , link: String
+    }
 
 type alias ShowcaseItem =
     { id : Int
@@ -16,12 +21,23 @@ type alias ShowcaseItem =
 
 
 type alias Model =
-    { showcaseList : List ShowcaseItem }
+    { socialLinkList : List SocialLinkItem
+    , showcaseList : List ShowcaseItem
+    }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( { showcaseList =
+    (
+        { socialLinkList =
+            [ { id = 1, icon = "facebook", link = "https://www.facebook.com/frost.adh" }
+            , { id = 2, icon = "twitter", link = "https://twitter.com/adhfrostfate" }
+            , { id = 3, icon = "linkedin", link = "https://www.linkedin.com/in/adhywiranata" }
+            , { id = 4, icon = "github", link = "https://github.com/adhywiranata" }
+            , { id = 5, icon = "medium", link = "https://medium.com/@adhywiranata" }
+            , { id = 6, icon = "envelope", link = "mailto:adhywiranatap@gmail.com" }
+            ]
+        , showcaseList =
             [ { id = 1
               , title = "Ree.na Framework"
               , link = "https://github.com/adhywiranata/reena"
@@ -43,7 +59,7 @@ init =
               , description = "Anime Listing Progressive Web App using kitsu.io API"
               }
             ]
-      }
+        }
     , Cmd.none
     )
 
@@ -125,42 +141,22 @@ viewLeadContent =
             ]
         ]
 
-
-viewSocial : Html Msg
-viewSocial =
-    div
-        [ class "social-icons" ]
-        [ a
-            [ target "_top"
-            , href "mailto:adhywiranatap@gmail.com"
-            ]
-            [ i [ class "fa fa-envelope" ] [] ]
-        , a
-            [ target "_blank"
-            , href "https://www.facebook.com/frost.adh"
-            ]
-            [ i [ class "fa fa-facebook" ] [] ]
-        , a
-            [ target "_blank"
-            , href "https://twitter.com/adhfrostfate"
-            ]
-            [ i [ class "fa fa-twitter" ] [] ]
-        , a
-            [ target "_blank"
-            , href "https://www.linkedin.com/in/adhywiranata"
-            ]
-            [ i [ class "fa fa-linkedin" ] [] ]
-        , a
-            [ target "_blank"
-            , href "https://github.com/adhywiranata"
-            ]
-            [ i [ class "fa fa-github" ] [] ]
-        , a
-            [ target "_blank"
-            , href "https://medium.com/@adhywiranata"
-            ]
-            [ i [ class "fa fa-medium" ] [] ]
+viewSocialLinkItem : SocialLinkItem -> Html Msg
+viewSocialLinkItem socialLinkItem =
+    a
+        [ target "_blank"
+        , href socialLinkItem.link
         ]
+        [ i [ class ("fa fa-" ++ socialLinkItem.icon) ] [] ]
+
+viewSocialLinkList : List SocialLinkItem -> Html Msg
+viewSocialLinkList socialLinkList =
+    let
+        socialLinkItem =
+            List.map viewSocialLinkItem socialLinkList
+    in
+        div
+            [ class "social-icons"] socialLinkItem
 
 
 viewDescription : Html Msg
@@ -178,10 +174,10 @@ viewDescription =
                         [ text "WHO AM I" ]
                     , p
                         []
-                        [ text "I am a front-end engineer passionate in internet-based"
-                        , text "technology. I am an INFP (Mediator) person, a futurist"
-                        , text "and a learner by nature, a good listener and sometimes"
-                        , text "a deep thinker. I have a great drive to improve people's"
+                        [ text "I am a front-end engineer passionate in internet-based "
+                        , text "technology. I am an INFP (Mediator) person, a futurist "
+                        , text "and a learner by nature, a good listener and sometimes "
+                        , text "a deep thinker. I have a great drive to improve people's "
                         , text "life by helping them launch their dream, passion, and "
                         , text "career through education and productivity."
                         ]
@@ -231,7 +227,7 @@ view model =
             [ viewHeading
             , viewLogo
             , viewLeadContent
-            , viewSocial
+            , viewSocialLinkList model.socialLinkList
             ]
         , div
             [ id "content" ]
