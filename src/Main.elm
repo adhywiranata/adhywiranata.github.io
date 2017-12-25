@@ -95,7 +95,7 @@ viewHeading =
 viewLogo : Html Msg
 viewLogo =
     img
-        [ src "https://github.com/adhywiranata/adhywiranata.github.io/blob/develop/public/atom_v2.svg"
+        [ src "https://raw.githubusercontent.com/adhywiranata/adhywiranata.github.io/develop/public/atomic.png"
         , class "atom-logo"
         ]
         []
