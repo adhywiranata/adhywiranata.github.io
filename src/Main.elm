@@ -1,6 +1,6 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, h3, img, span, p, a, i, footer)
+import Html exposing (Html, text, div, h1, h2, h3, img, span, p, a, i, footer)
 import Html.Attributes exposing (src, id, class, target, href)
 
 ---- MODEL ----
@@ -92,15 +92,6 @@ viewHeading =
         ]
 
 
-viewLogo : Html Msg
-viewLogo =
-    img
-        [ src "https://raw.githubusercontent.com/adhywiranata/adhywiranata.github.io/develop/public/atomic.png"
-        , class "atom-logo"
-        ]
-        []
-
-
 viewLeadContent : Html Msg
 viewLeadContent =
     p
@@ -165,15 +156,15 @@ viewDescription =
         [ div
             [ class "card-wrapper" ]
             [ div
-                [ class "card card-normal" ]
+                [ class "card card-terminal" ]
                 [ div
                     [ class "card-content" ]
                     [ h3
                         []
-                        [ text "WHO AM I" ]
+                        [ text "$ whoami" ]
                     , p
                         []
-                        [ text "I am a front-end engineer passionate in internet-based "
+                        [ text "> I am a front-end engineer passionate in internet-based "
                         , text "technology. I am an INFP (Mediator) person, a futurist "
                         , text "and a learner by nature, a good listener and sometimes "
                         , text "a deep thinker. I have a great drive to improve people's "
@@ -224,7 +215,6 @@ view model =
         [ div
             [ id "main" ]
             [ viewHeading
-            , viewLogo
             , viewLeadContent
             , viewSocialLinkList model.socialLinkList
             ]
@@ -234,7 +224,8 @@ view model =
             ]
         , div
             [ id "showcase" ]
-            [ viewShowcaseList model.showcaseList ]
+            [ h2 [][ text "Experiments;" ]
+            , viewShowcaseList model.showcaseList ]
         , footer
             []
             [ span

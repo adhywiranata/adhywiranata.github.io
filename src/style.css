@@ -12,14 +12,16 @@ body {
 /* ==== MAIN SECTION ==== */
 
 #container {
+  font-family: 'Dosis', sans-serif;
   background-color: rgba(255, 255, 255);
-  width: 70%;
-  padding-bottom: 30px;
+  text-align: center;
 }
 
 #main {
-  text-align: center;
+  width: 70%;
   font-family: 'Dosis', sans-serif;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 #main h1 {
@@ -31,7 +33,16 @@ body {
   padding: 30;
 }
 
+h2 {
+  font-size: 3rem;
+  color: #1BBC9B;
+}
+
 @media only screen and (max-width: 768px) {
+  #main {
+    width: 90%;
+  }
+  
   #main h1 {
     font-size: 3rem;
   }
@@ -43,6 +54,10 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+  #main {
+    width: 95%;
+  }
+  
   #main h1 {
     font-size: 2.5rem;
   }
@@ -51,25 +66,6 @@ body {
     font-size: 1rem;
     padding: 30;
   }
-}
-
-
-.atom-logo {
-  animation: atom-logo-spin infinite 30s linear;
-  height: 150px;
-  width: 150px;
-}
-
-@media only screen and (max-width: 480px) {
-  .atom-logo {
-    height: 80px;
-    width: 80px;
-  }
-}
-
-@keyframes atom-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .lead {
@@ -92,22 +88,54 @@ body {
 
 .main-01 {
   color: #34495E;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.main-01:hover {
+  transition: 0.5s;
+  opacity: 0.5;
 }
 
 .main-02 {
   color: #EC644B;
+  cursor: pointer;
+  /* vertical-align: 0px; */
+  transition: 0.5s;
 }
 
 .main-03 {
   color: #1BBC9B;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.main-03:hover {
+  letter-spacing: 0.8rem;
+  transition: 0.5s;
 }
 
 .main-04 {
   color: #EB9532;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.main-04:hover {
+  letter-spacing: 0.4rem;
+  transition: 1s;
 }
 
 .main-05 {
   color: #3498DB;
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+
+.main-05:hover {
+  letter-spacing: 0.4rem;
+  transition: 0.5s;
 }
 
 .headline-description {
@@ -173,67 +201,7 @@ body {
   }
 }
 
-#search-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Dosis', sans-serif;
-  position: relative;
-}
-
-.search {
-  width: 100%;
-  font-size: 2em;
-  padding: 20 30;
-  border: 10px solid rgba(0, 0, 0, .1);
-  border-radius: 20px;
-  outline: none;
-  color: #1BBC9B;
-  font-family: 'Dosis', sans-serif;
-}
-
-.search-enter {
-  position: absolute;
-  top: 15%;
-  right: 20px;
-  border: 0;
-  background-color: #1BBC9B;
-  color: #FFFFFF;
-  padding: 15;
-  font-size: 1.5em;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
-}
-
-/*.search:focus {
-  border: 0;
-  margin: 10;
-  color: #FFF;
-  background: #ffb347;
-  background: -webkit-linear-gradient(to right, #ffcc33, #ffb347);
-  background: linear-gradient(to right, #ffcc33, #ffb347);
-}*/
-
-.search-hint {
-  text-align: center;
-  color: #BBB;
-  font-size: 1.2em;
-  padding: 10;
-}
-
-@media only screen and (max-width: 1024px) {
-  #container {
-    width: 80%;
-  }
-
-  .card-container {
-    padding: 70
-  }
-}
-
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   #container {
     width: 90%;
   }
@@ -247,41 +215,34 @@ body {
     flex: 1;
     align-items: center;
   }
-}
-
-@media only screen and (max-width: 1024px) {
-  #container {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #container {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  #container {
-    width: 100%;
-  }
-}
+} */
 
 /* ==== CONTENT SECTION ==== */
 
 #content {
   margin-top: 80px;
   flex: 1;
-  width: 100%;
-  margin: 0;
+  width: 70%;
+  margin: 0 auto;
   box-sizing: border-box;
-  background: #FBFBFB;
   position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+  #content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #content {
+    width: 100%;
+  }
+}
+
 .card-container {
-  padding: 100;
-  margin-top: 0px;
+  /* padding: 100; */
+  margin: 0;
 }
 
 .card-content-main {
@@ -294,19 +255,19 @@ body {
 
 @media only screen and (max-width: 1024px) {
   .card-container {
-    padding: 70
+    padding: 70px
   }
 }
 
 @media only screen and (max-width: 768px) {
   .card-container {
-    padding: 40
+    padding: 40px
   }
 }
 
 @media only screen and (max-width: 480px) {
   .card-container {
-    padding: 0
+    padding: 0px
   }
 }
 
@@ -322,15 +283,34 @@ body {
 .card {
   margin: 10px;
   background: #FFFFFF;
-  padding: 0;
+  padding: 10px 30px;
   display: -webkit-flex; /* Safari */
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  flex-wrap: wrap;
   display: flex;
   border-radius: 10px;
   flex-direction: row;
   font-family: 'Dosis', sans-serif;
   transition: 0.5s;
+  box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
   /*border: 1px solid rgba(0,0, 0,.1);*/
+}
+
+.card-terminal {
+  background: #353535;
+}
+
+.card-terminal:hover {
+  transform: translateY(5px);
+}
+
+.card-terminal h3 {
+  color: #EB9532 !important;
+}
+
+.card-terminal p {
+  color: #FAFAFA !important;
+  letter-spacing: 0.1em;
 }
 
 .card:hover {
@@ -342,6 +322,12 @@ body {
 
 .card-normal {
   flex: 1;
+}
+
+.card-normal:hover {
+  /* box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.2); */
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  transform: translateY(-5px);
 }
 
 .card-half {
@@ -386,7 +372,7 @@ body {
 .card-content > h3 {
   font-size: 3em;
   margin-top: 40px;
-  line-height: 1em;
+  /* line-height: 1em; */
   padding-left: 0px;
   color: #3498DB;
 }
@@ -394,7 +380,7 @@ body {
 .card-content > a {
   font-size: 1.8rem;
   margin-top: 40px;
-  line-height: 0em;
+  /* line-height: 0em; */
   padding-left: 0px;
   color: #EC644B;
   text-decoration: none;
@@ -403,9 +389,9 @@ body {
 
 .card-content > p {
   padding: 0px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #777;
-  text-align: justify;
+  text-align: center;
 }
 
 .blue-card {
@@ -429,13 +415,25 @@ body {
 #showcase {
   margin-top: 180px;
   flex: 1;
-  width: 100%;
-  margin: 0;
+  width: 70%;
+  margin: 0 auto;
   box-sizing: border-box;
-  background: #34495E;
+  /* background: #34495E; */
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  #showcase {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #showcase {
+    width: 100%;
+  }
 }
 
 /* === FOOTER === */
