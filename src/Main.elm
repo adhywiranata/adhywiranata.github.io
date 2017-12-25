@@ -3,7 +3,6 @@ module Main exposing (..)
 import Html exposing (Html, text, div, h1, h3, img, span, p, a, i, footer)
 import Html.Attributes exposing (src, id, class, target, href)
 
-
 ---- MODEL ----
 
 type alias SocialLinkItem =
